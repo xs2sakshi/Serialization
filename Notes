@@ -1,0 +1,14 @@
+Marker Interface:-
+No methods*
+indication to Java interpretor(JVM) to provide some special handling like- Cloneable, Serializable
+
+Serialization helps to write the state of an object to a byte stream
+Used to transfer an object over a network (marshalling & Unmarshalling)
+All subclsses of a Serializable class will be serializable 
+If a subclass is made Serializable but the superclass doesn't have a no-arg public constructore to write and restore its state, it will throw a NotSeriazableException
+  at runtime
+To avoid a subclass from being serialized, overridethe writeObject() & readObject() methods to throw NotSerializableException
+SerialVersionUID is a stamp on a nobject which is matched during deserialization , in case the state of an object is modified , the serial version id will not match
+  during deserialization and java.io.InvalidClassException will be thrown
+Externalizable similar to Serializable but allows morecontrol using methods readExternal() & eriteExternal()
+
